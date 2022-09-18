@@ -17,6 +17,8 @@
     export interface RequestCreate {
         name: string;
         job: string;
+        id: string;
+        createdAt: Date;
     }
 
     export interface ResponseCreate {

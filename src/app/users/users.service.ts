@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponseUsers } from './users.model';
+import { RequestCreate, ResponseUsers } from './users.model';
 import { HttpClient }  from "@angular/common/http" ;
 
 @Injectable({
@@ -17,4 +17,7 @@ export class UsersService {
 
   }
 
+  CreateUsers(request:RequestCreate): Observable<RequestCreate>{
+    return this.http.post<RequestCreate>(this.url, request);
+  }
 }
